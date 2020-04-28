@@ -64,6 +64,21 @@
   }
 }
 
+.slider__item.swiper-slide-next,
+.slider__item.swiper-slide-active {
+  animation-name: slider-item-opacity;
+  animation-duration: 0.85s;
+
+  @keyframes slider-item-opacity {      /*Анимация для плавного появления блоков с текстом*/
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+}
+
 .slider__item-title {
   margin: 0 0 0 -5.5rem;
   text-transform: uppercase;

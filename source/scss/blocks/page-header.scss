@@ -241,6 +241,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
+    transition: all 1s;
 
     &::after {
       content: "";
@@ -251,6 +252,7 @@
       background-color: $c-light;
       display: none;
       left: 0;
+      transition: transform 1s, color 0.35s;
 
       @media (min-width: $stop-scaling) {
         left: -5px;
@@ -274,7 +276,14 @@
       &::after {
         display: block;
       }
+
+      &:hover{
+        &::after {
+          animation-name: none;
+        }
+      }
     }
+
 
     &:hover,
     &:focus {
@@ -282,8 +291,34 @@
       outline: none;
 
       &::after {
+        display: block;
         opacity: 1;
         background-color: $c-purple;
+        transform: translateX(0px);
+        animation-name: translate_left_to_right;
+        animation-duration: 0.4s;
+      }
+    }
+
+    // &.active {
+    //   &::after {
+    //     display: block;
+    //   }
+
+    //   &:hover {
+    //     animation-name: none;
+    //   }
+    // }
+
+
+    @keyframes translate_left_to_right {
+      from{
+        transform: translateX(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0px);
+        opacity: 1;
       }
     }
   }
@@ -306,3 +341,4 @@
     width: 100%;
   }
 }
+

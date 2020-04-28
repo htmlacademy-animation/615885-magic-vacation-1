@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: all 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -89,6 +90,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.3s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -204,6 +206,7 @@
 
   svg {
     @include center;
+    transition: all 0.3s;
   }
 
   &--fb {
