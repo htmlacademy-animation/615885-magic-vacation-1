@@ -19,4 +19,5 @@ result();
 form();
 social();
 
-new FullPageScroll();
+const fullPageScroll = new FullPageScroll();
+fullPageScroll.init();

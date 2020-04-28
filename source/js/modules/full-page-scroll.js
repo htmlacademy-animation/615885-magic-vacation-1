@@ -10,7 +10,9 @@ export default class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChenged.bind(this);
+  }
 
+  init() {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
