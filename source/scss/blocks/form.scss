@@ -42,6 +42,11 @@
   color: $c-dark;
   border: 0;
   border-radius: 3rem;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $c-purple;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-right: 30px;

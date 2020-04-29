@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
@@ -25,33 +25,44 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'build'),
-    publicPath: '',
+    publicPath: '/',
     filename: 'js/script.js'
   },
   module: {
     rules: [
       {
         test: /\.s[a|c]ss$/,
-        use: ExtractTextPlugin.extract({
-          use: [{
-            loader: "css-loader?-url"
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "sass-loader"
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: { sourceMap: true },
           }
-          ],
-          fallback: "style-loader"
-        })
+        ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [{
-            loader: "css-loader?-url"
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
-          ],
-          fallback: "style-loader"
-        })
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
@@ -80,13 +91,13 @@ module.exports = {
       filename: 'index.html',
       template: 'source/index.html',
     }),
-    new ExtractTextPlugin({
-      filename: (getPath) => {
-        return getPath('css/style.min.css');
-      },
-      allChunks: true
+    new MiniCssExtractPlugin({
+      filename: 'css/style.min.css',
+      chunkFilename: "[id].css"
     }),
-    new CssoWebpackPlugin(),
+    new CssoWebpackPlugin({
+      pluginOutputPostfix: 'min'
+    }),
     new CopyPlugin([
       {
         from: "source/fonts/**/*.{woff,woff2}",
