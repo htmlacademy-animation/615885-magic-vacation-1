@@ -10107,27 +10107,6 @@ module.exports = code;
 
 /***/ }),
 
-/***/ "./source/js/modules/animate-message.js":
-/*!**********************************************!*\
-  !*** ./source/js/modules/animate-message.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (()=> {
-  let messageIntro = document.querySelector('.intro__message p');
-  let menuItem = document.querySelectorAll('.js-menu ul li')[0].children[0];
-
-  if(menuItem.classList.contains('active')) {
-    messageIntro.classList.add('message--opacity');
-  }
-});
-
-
-/***/ }),
-
 /***/ "./source/js/modules/chat.js":
 /*!***********************************!*\
   !*** ./source/js/modules/chat.js ***!
@@ -10308,7 +10287,9 @@ class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChenged.bind(this);
+  }
 
+  init() {
     document.addEventListener(`wheel`, lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
@@ -10615,9 +10596,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form.js */ "./source/js/modules/form.js");
 /* harmony import */ var _modules_social_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/social.js */ "./source/js/modules/social.js");
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
-/* harmony import */ var _modules_animate_message_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/animate-message.js */ "./source/js/modules/animate-message.js");
 // modules
-
 
 
 
@@ -10637,7 +10616,6 @@ Object(_modules_chat_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_result_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
 Object(_modules_form_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
-Object(_modules_animate_message_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
 
 new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 
