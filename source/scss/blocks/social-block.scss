@@ -4,8 +4,11 @@
   &:hover {
     .social-block__list {
       opacity: 1;
-      transform: scale(1);
       pointer-events: auto;
+    }
+
+    .social-block__link {
+      opacity: 1;
     }
   }
 }
@@ -92,9 +95,6 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.35s ease-in, opacity 0.4s ease-out;
-  transform: scale(0);
-  transform-origin: 50% 0%;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -173,6 +173,8 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.55s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -213,6 +215,8 @@
   }
 
   &--fb {
+    transition-delay: 0.1s;
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -225,6 +229,8 @@
   }
 
   &--insta {
+    transition-delay: 0.15s;
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -237,6 +243,8 @@
   }
 
   &--vk {
+    transition-delay: 0.2s;
+
     svg {
       width: 1.7rem;
       height: 1rem;

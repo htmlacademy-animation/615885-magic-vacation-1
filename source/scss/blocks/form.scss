@@ -48,6 +48,12 @@
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
 
+  outline: none;
+
+  &:focus {
+    border: 1px solid $c-purple;
+  }
+
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
     padding: 0 56px;

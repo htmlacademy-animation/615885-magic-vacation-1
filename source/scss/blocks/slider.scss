@@ -99,7 +99,7 @@
   line-height: 2rem;
   transform: translateX(20px);
   opacity: 0;
-  transition: all 0.35s ease-out;
+  transition: all 0.45s ease-in;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
