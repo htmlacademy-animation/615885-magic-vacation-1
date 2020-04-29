@@ -33,6 +33,7 @@ export default () => {
           }
         },
         observer: true,
+        observeParents: true
       });
     } else {
       storySlider = new Swiper(`.js-slider`, {
@@ -66,6 +67,7 @@ export default () => {
           }
         },
         observer: true,
+        observeParents: true
       });
     }
   };

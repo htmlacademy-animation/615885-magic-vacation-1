@@ -192,6 +192,7 @@
     display: block;
     width: 1rem;
     height: 2rem;
+    pointer-events: none;
 
     @media (min-width: $stop-scaling) {
       width: 10px;

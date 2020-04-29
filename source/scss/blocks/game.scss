@@ -106,16 +106,14 @@
 }
 
 .game__buttons {
-  position: absolute;
-  top: 5rem;
+  position: fixed;
   left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   z-index: 100;
   opacity: 0.5;
+  display: none;
 }
 
 .game__button {
   margin: 0 30px 30px;
+  display: block;
 }
