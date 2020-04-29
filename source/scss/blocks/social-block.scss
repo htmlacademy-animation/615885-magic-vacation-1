@@ -4,6 +4,7 @@
   &:hover {
     .social-block__list {
       opacity: 1;
+      transform: scale(1);
       pointer-events: auto;
     }
   }
@@ -17,7 +18,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: all 0.3s;
+  transition: color 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -36,6 +37,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width 0.15s, height 0.15s;
   }
 
   svg {
@@ -90,7 +92,9 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s;
+  transition: transform 0.35s ease-in, opacity 0.4s ease-out;
+  transform: scale(0);
+  transform-origin: 50% 0%;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -130,7 +134,6 @@
   }
 
   &:hover {
-    opacity: 1;
     pointer-events: auto;
   }
 

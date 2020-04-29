@@ -93,6 +93,9 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  animation-name: intro-message;
+  animation-duration: 0.65s;
+  animation-fill-mode: forwards;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -115,27 +118,6 @@
 
   p {
     margin: 0;
-    opacity: 0;
-    transition: all 2s;
-    transition-delay: 2s;
-
-    &.message--opacity {
-      animation-name: message-opacity;
-      animation-duration: 0.85s;
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes message-opacity {
-      from {
-        opacity: 0;
-        transform: translateY(0);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(-15px);
-      }
-    }
-
   }
 
   svg {
