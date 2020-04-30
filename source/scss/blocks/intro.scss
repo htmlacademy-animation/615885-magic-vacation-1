@@ -1,4 +1,4 @@
-.intro {
+ .intro {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,6 +93,9 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  animation-name: intro-message;
+  animation-duration: 0.65s;
+  animation-fill-mode: forwards;
 
   @media (min-width: $stop-scaling) {
     width: 509px;

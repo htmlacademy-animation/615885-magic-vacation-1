@@ -246,11 +246,14 @@
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 0%;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      // display: none;
+      right: 0;
+      left: initial;
+      transition: all 0.4s ease-in-out;
+
 
       @media (min-width: $stop-scaling) {
         left: -5px;
@@ -273,19 +276,29 @@
     &.active {
       &::after {
         display: block;
+        width: 100%;
       }
     }
+
 
     &:hover,
     &:focus {
       color: $c-purple;
       outline: none;
+      transition: color 0.35s ease-in;
+      transform-origin: right;
+
 
       &::after {
+        display: block;
         opacity: 1;
         background-color: $c-purple;
+        left: 0;
+        right: initial;
+        width: 100%;
       }
     }
+
   }
 }
 
@@ -306,3 +319,4 @@
     width: 100%;
   }
 }
+
