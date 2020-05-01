@@ -37,8 +37,8 @@
   color: $c-light;
   opacity: 0;               //скрываем элемент
   transform: translateX(-20px);     //Смещаем лого к левому краю экрана
-  transition: transform 0.65s cubic-bezier(.09,.67,.62,1.04), opacity 0.4s cubic-bezier(.09,.67,.62,1.04);
-  transition-delay: 0.4s;
+  transition: transform 0.55s cubic-bezier(.09,.67,.62,1.04), opacity 0.4s cubic-bezier(.09,.67,.62,1.04);
+  transition-delay: 0.3s;
 
 
   @media (min-width: $stop-scaling) {
@@ -142,8 +142,8 @@
   // visibility: hidden;     //скрываем элемент
   align-items: center;
   opacity: 0;               //скрываем элемент
-  transition: opacity 0.7s cubic-bezier(.13,.75,.77,.97);
-  transition-delay: 0.5s;
+  transition: opacity 0.5s cubic-bezier(.13,.75,.77,.97);
+  transition-delay: 0.4s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -292,12 +292,13 @@
       }
     }
 
-    &.active {
-      &::after {
-        display: block;
-        width: 100%;
-      }
-    }
+    // &.active {
+    //   &::after {
+    //     // display: block;
+    //     // width: 100%;
+    //     // transition: width 1s;
+    //   }
+    // }
 
 
     &:hover,
@@ -309,7 +310,6 @@
 
 
       &::after {
-        display: block;
         opacity: 1;
         background-color: $c-purple;
         left: 0;
@@ -318,6 +318,20 @@
       }
     }
 
+  }
+}
+
+.body-load .page-header__menu {
+  a {
+    &.active {
+      &::after {
+        right: initial;
+        left: 0;
+        width: 100%;
+        transition: width 0.5s cubic-bezier(.29,.69,.67,.86);
+        transition-delay: 0.4s;
+      }
+    }
   }
 }
 

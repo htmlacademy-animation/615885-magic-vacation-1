@@ -47,8 +47,8 @@
   background-color: $c-light;
   z-index: 1;
   transform: translateY(100%);      //смещаем футер вниз за пределы экрана
-  transition: transform 0.6s cubic-bezier(.29,.59,.77,.76);
-  transition-delay: 0.2s;
+  transition: transform 0.55s cubic-bezier(.29,.59,.77,.76);
+  transition-delay: 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
