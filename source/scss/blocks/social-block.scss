@@ -1,7 +1,8 @@
 .social-block {
   position: relative;
 
-  &:hover {
+  &:hover,
+  &:focus {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
@@ -21,7 +22,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: color 0.3s;
+  transition: color 0.4s ease-out;
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -40,7 +42,9 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: width 0.15s, height 0.15s;
+    transform: translate(-50%, -50%) scale(0);
+    transition: width 0.15s, height 0.15s, transform 0.35s cubic-bezier(.47,.02,.73,1.9);
+    transition-delay: 0s, 0s, 0.55s;
   }
 
   svg {
@@ -84,6 +88,13 @@
       background-color: $c-purple;
       border-color: $c-purple;
     }
+  }
+}
+
+.body-load .social-block__toggler {     //показываем кнопку после того как показали навигационное меню
+
+  &::before {
+    transform: translate(-50%, -50%) scale(0.95);
   }
 }
 
