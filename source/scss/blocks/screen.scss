@@ -299,11 +299,25 @@
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
   }
+
+  .screen--hidden + &.screen--hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 .screen--prizes {
-  background-color: $c-dark;
+  // background-color: $c-dark;
 }
+
+.screen--prizes.active ~ .fill {
+  height: 100%;
+}
+
 
 .screen--game {
   position: relative;

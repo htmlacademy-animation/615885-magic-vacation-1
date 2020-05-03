@@ -1,0 +1,9 @@
+.fill {
+  position: absolute;
+  bottom: 0;
+  height: 0%;
+  width: 100%;
+  background: $c-dark;
+  transition: all 1.45s;
+  z-index: 0;
+}
