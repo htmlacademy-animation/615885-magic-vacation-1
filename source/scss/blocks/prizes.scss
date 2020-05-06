@@ -30,6 +30,11 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  animation-name: show-block;           //Добавляем анимацию появления блока
+  animation-timing-function: ease-in;
+  animation-duration: 0.85s;
+  animation-delay: 0.55s;
+  animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     font-size: 48px;
@@ -58,6 +63,11 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation-name: show-and-translate;       //Добавляем анимацию появления блока
+  animation-timing-function: ease-out;
+  animation-duration: 0.85s;
+  animation-delay: 0.65s;
+  animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -94,6 +104,11 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: auto;
+  animation-name: show-block;                 //Добавляем анимацию появления блока
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.85s;
+  animation-delay: 0.85s;
+  animation-fill-mode: backwards;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     flex-direction: column;
@@ -327,34 +342,6 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 0.5rem;
       height: 0.5rem;
-    }
-  }
-}
-
-.screen--prizes {
-  .prizes {
-    &__title {
-      animation-name: show-block;
-      animation-timing-function: ease-in;
-      animation-duration: 0.85s;
-      animation-delay: 0.55s;
-      animation-fill-mode: backwards;
-    }
-
-    &__lead {
-      animation-name: show-and-translate;
-      animation-timing-function: ease-out;
-      animation-duration: 0.85s;
-      animation-delay: 0.65s;
-      animation-fill-mode: backwards;
-    }
-
-    &__list {
-      animation-name: show-block;
-      animation-timing-function: ease-in-out;
-      animation-duration: 0.85s;
-      animation-delay: 0.85s;
-      animation-fill-mode: backwards;
     }
   }
 }
