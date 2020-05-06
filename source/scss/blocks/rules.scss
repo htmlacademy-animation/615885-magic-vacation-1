@@ -247,6 +247,25 @@
   right: 5.6rem;
   opacity: 0;
 
+  &--bg-before {
+    &::before {
+      top: 0;
+      left: 0;
+      transform-origin: 100% 50%;
+      animation-name: form-field;
+      animation-duration: 0.45s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &__text--show {
+    opacity: 0;
+    animation-name: show-block;
+    animation-duration: 0.3s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+  }
+
   @media (min-width: $stop-scaling) {
     bottom: 60px;
     right: 56px;
@@ -268,20 +287,3 @@
   }
 }
 
-.screen--rules {
-  .rules {
-    &__title {
-      // animation-name: show-block;
-      // animation-duration: 0.85s;
-      // animation-delay: 0.55s;
-      // animation-fill-mode: backwards;
-    }
-
-    &__lead {
-      // animation-name: show-and-translate;
-      // animation-duration: 0.85s;
-      // animation-delay: 0.65s;
-      // animation-fill-mode: backwards;
-    }
-  }
-}
