@@ -1,18 +1,20 @@
-@keyframes prizes-title {
+@keyframes show-block {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
 }
 
-@keyframes prizes-lead {
+@keyframes show-and-translate {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
   to {
     transform: translateY(0px);
     opacity: 1;
   }
 }
 
-@keyframes prizes-list {
-  to {
-    opacity: 1;
-  }
-}
