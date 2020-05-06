@@ -923,10 +923,11 @@ img {
 .fill {
   position: absolute;
   bottom: 0;
+  top: initial;
   height: 0%;
   width: 100%;
   background: #5f458c;
-  transition: all 1.25s;
+  transition: height 0.45s;
   z-index: 0; }
 
 @keyframes intro-message {
@@ -942,6 +943,19 @@ img {
     transform: scaleX(0); }
   to {
     transform: scaleX(1); } }
+
+@keyframes prizes-title {
+  to {
+    opacity: 1; } }
+
+@keyframes prizes-lead {
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
+
+@keyframes prizes-list {
+  to {
+    opacity: 1; } }
 
 .animation-screen {
   position: fixed;
@@ -1924,7 +1938,8 @@ img {
   font-weight: 400;
   font-size: 4.8rem;
   line-height: 0.906;
-  letter-spacing: -0.04em; }
+  letter-spacing: -0.04em;
+  opacity: 0; }
   @media (min-width: 2000px) {
     .prizes__title {
       font-size: 48px; } }
@@ -1947,7 +1962,9 @@ img {
   max-width: 34rem;
   text-transform: uppercase;
   font-size: 2.4rem;
-  line-height: 1.2; }
+  line-height: 1.2;
+  transform: translateY(30px);
+  opacity: 0; }
   @media (min-width: 2000px) {
     .prizes__lead {
       margin-left: 58px;
@@ -1978,7 +1995,8 @@ img {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: auto; }
+  margin-top: auto;
+  opacity: 0; }
   @media (max-width: 1024px) and (orientation: portrait) {
     .prizes__list {
       flex-direction: column;
@@ -2156,6 +2174,24 @@ img {
       .prizes__desc svg {
         width: 0.5rem;
         height: 0.5rem; } }
+
+.screen--prizes .prizes__title {
+  animation-name: prizes-title;
+  animation-duration: 0.85s;
+  animation-delay: 0.55s;
+  animation-fill-mode: forwards; }
+
+.screen--prizes .prizes__lead {
+  animation-name: prizes-lead;
+  animation-duration: 0.85s;
+  animation-delay: 0.65s;
+  animation-fill-mode: forwards; }
+
+.screen--prizes .prizes__list {
+  animation-name: prizes-list;
+  animation-duration: 0.85s;
+  animation-delay: 0.85s;
+  animation-fill-mode: forwards; }
 
 .result {
   flex-grow: 1;
@@ -2842,12 +2878,13 @@ img {
     width: 100%;
     z-index: 0; }
 
-.screen--prizes.active ~ .fill {
+.screen--prizes.active ~ .fill,
+.screen--rules.active ~ .fill,
+.screen--game.active ~ .fill {
   height: 100%; }
 
 .screen--game {
-  position: relative;
-  background-color: #5f458c; }
+  position: relative; }
   .screen--game::before {
     content: "";
     position: absolute;
@@ -2875,15 +2912,11 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #5f458c;
   opacity: 0;
   pointer-events: none; }
   .screen--result.screen--show {
     opacity: 1;
     pointer-events: auto; }
-
-.screen--rules {
-  background-color: #5f458c; }
 
 .slider {
   position: relative;
