@@ -1,0 +1,11 @@
+.fill {
+  position: absolute;
+  bottom: 0;
+  top: initial;
+  height: 0%;
+  width: 100%;
+  background: $c-dark;
+  // background-color: yellowgreen;
+  transition: height 0.45s;
+  z-index: 0;
+}

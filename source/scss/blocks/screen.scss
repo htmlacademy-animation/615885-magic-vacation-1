@@ -306,15 +306,30 @@
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
   }
+
+  .screen--hidden + &.screen--hidden {      //включаем блок после того как ушли с него
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 .screen--prizes {
-  background-color: $c-dark;
+  // background-color: $c-dark;
+}
+
+.screen--prizes.active ~ .fill,
+.screen--rules.active ~ .fill,
+.screen--game.active ~ .fill {
+  height: 100%;
 }
 
 .screen--game {
   position: relative;
-  background-color: $c-dark;
+  // background-color: $c-dark;
 
   &::before {
     content: "";
@@ -348,7 +363,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: $c-dark;
+  // background-color: $c-dark;
   opacity: 0;
   pointer-events: none;
 
@@ -359,5 +374,5 @@
 }
 
 .screen--rules {
-  background-color: $c-dark;
+  // background-color: $c-dark;
 }
