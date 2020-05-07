@@ -35,11 +35,6 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
-  opacity: 0;               //скрываем элемент
-  transform: translateX(-20px);     //Смещаем лого к левому краю экрана
-  transition: transform 0.55s cubic-bezier(.09,.67,.62,1.04), opacity 0.4s cubic-bezier(.09,.67,.62,1.04);
-  transition-delay: 0.3s;
-
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -74,11 +69,6 @@
     width: 100%;
     height: auto;
   }
-}
-
-.body-load .page-header__logo {       //показываем блок когда страница загрузилась
-  transform: translateX(0);
-  opacity: 1;
 }
 
 .page-header__toggler {
@@ -139,11 +129,7 @@
 
 .page-header__nav {
   display: flex;
-  // visibility: hidden;     //скрываем элемент
   align-items: center;
-  opacity: 0;               //скрываем элемент
-  transition: opacity 0.5s cubic-bezier(.13,.75,.77,.97);
-  transition-delay: 0.4s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -182,11 +168,6 @@
       transform: translateX(0);
     }
   }
-}
-
-.body-load .page-header__nav {          //показываем блок когда страница загрузилась
-  // visibility: visible;
-  opacity: 1;
 }
 
 .page-header__menu {
@@ -265,19 +246,11 @@
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0%;
+      width: 100%;
       height: 2px;
       background-color: $c-light;
-      // display: none;
-      right: 0;
-      left: initial;
-      transition: all 0.4s ease-in-out;
-
-
-      @media (min-width: $stop-scaling) {
-        left: -5px;
-        right: -5px;
-      }
+      display: none;
+      left: 0;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -292,44 +265,20 @@
       }
     }
 
-    // &.active {
-    //   &::after {
-    //     // display: block;
-    //     // width: 100%;
-    //     // transition: width 1s;
-    //   }
-    // }
-
+    &.active {
+      &::after {
+        display: block;
+      }
+    }
 
     &:hover,
     &:focus {
       color: $c-purple;
       outline: none;
-      transition: color 0.35s ease-in;
-      transform-origin: right;
-
 
       &::after {
         opacity: 1;
         background-color: $c-purple;
-        left: 0;
-        right: initial;
-        width: 100%;
-      }
-    }
-
-  }
-}
-
-.body-load .page-header__menu {
-  a {
-    &.active {
-      &::after {
-        right: initial;
-        left: 0;
-        width: 100%;
-        transition: width 0.5s cubic-bezier(.29,.69,.67,.86);
-        transition-delay: 0.4s;
       }
     }
   }
@@ -352,4 +301,3 @@
     width: 100%;
   }
 }
-
