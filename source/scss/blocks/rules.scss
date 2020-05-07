@@ -139,7 +139,7 @@
   @media (min-width: $stop-scaling) {
     margin: 0 0 62px;
     padding-top: 6px;
-    padding-left: 65px;
+    min-height: 5rem;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -162,10 +162,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     width: 4.5rem;
     height: 4.5rem;
     font-family: $font-alt;
