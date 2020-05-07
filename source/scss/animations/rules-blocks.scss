@@ -14,8 +14,11 @@
     transform: scale(0);
     opacity: 0;
   }
+  90% {
+    transform: scale(1.2);
+  }
   to {
-    transform: scale(0.95);
+    transform: scale(1);
     opacity: 1;
   }
 }

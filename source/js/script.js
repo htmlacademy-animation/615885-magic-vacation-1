@@ -9,7 +9,6 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import bodyAddClass from './modules/body-add-class.js';
-import itemRulesTransitionend from './modules/rules-item-add-transitionend.js';
 
 // init modules
 bodyAddClass();
@@ -21,7 +20,6 @@ chat();
 result();
 form();
 social();
-itemRulesTransitionend();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
