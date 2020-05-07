@@ -83,6 +83,10 @@
     font-size: 48px;
   }
 
+  @media (min-width: $tablet) {
+    margin-right: 5.6rem;
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     margin-bottom: 1.8rem;
     font-size: 3.6rem;
