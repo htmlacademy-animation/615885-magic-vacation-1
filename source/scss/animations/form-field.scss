@@ -1,6 +1,10 @@
 @keyframes form-field {
   from {
     transform: scaleX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
   }
   to {
     transform: scaleX(1);

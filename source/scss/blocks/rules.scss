@@ -31,6 +31,10 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  animation-name: show-block;   //Добавляем анимацию появления блока
+  animation-duration: 0.75s;
+  animation-delay: 0.25s;
+  animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     margin-bottom: 50px;
@@ -59,6 +63,10 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation-name: show-and-translate;   //Добавляем анимацию появления блока
+  animation-duration: 0.75s;
+  animation-delay: 0.35s;
+  animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -123,6 +131,10 @@
   padding-top: 0.6rem;
   padding-left: 6.5rem;
   break-inside: avoid;
+  // animation-name: show-item-text;
+  // animation-duration: 0.6s;
+  // animation-delay: 0.75s;
+  // animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 62px;
@@ -159,6 +171,10 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation-name: show-item-before;
+    animation-duration: 0.45s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -179,17 +195,45 @@
 
   p {
     margin: 0;
+    animation-name: show-item-text;
+    animation-duration: 0.55s;
+    animation-fill-mode: backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
     }
   }
+
+  @for $i from 1 through 4 {
+   &:nth-child(#{$i}) {
+    &::before {
+      animation-delay: addDelay(0.2, 0.3s, $i);
+    }
+
+    p {
+      animation-delay: addDelay(0.5, 0.3s, $i);
+    }
+   }
+  }
+
 }
 
 .rules__link {
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+  transform-origin: 100% 50%;
+  animation-name: form-field;
+  animation-duration: 0.45s;
+  animation-delay: addDelay(0.5, 0.35s, 4);    //Добавляем задержку по последнему элементу
+  animation-fill-mode: backwards;
+
+  span {
+    animation-name: show-block;
+    animation-duration: 0.3s;
+    animation-delay: addDelay(0.5, 0.45s, 4);
+    animation-fill-mode: backwards;
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -211,3 +255,4 @@
     right: 1.5rem;
   }
 }
+

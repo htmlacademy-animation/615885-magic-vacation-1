@@ -1,0 +1,25 @@
+@keyframes show-item-text {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes show-item-before {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  90% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

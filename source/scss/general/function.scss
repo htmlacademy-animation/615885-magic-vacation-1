@@ -1,0 +1,3 @@
+@function addDelay($start,$delay,$count) {      //Функция добавления задержки
+  @return $start + $delay * $count;
+}
