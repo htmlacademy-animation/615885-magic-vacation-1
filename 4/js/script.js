@@ -10306,15 +10306,14 @@ class FullPageScroll {
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
-    this.onUrlHashChengedHandler = this.onUrlHashChenged.bind(this);
+    this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
 
   init() {
-    document.addEventListener(`wheel`, lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT));
+    document.addEventListener(`wheel`, lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
-    this.onUrlHashChenged();
-    this.changePageDisplay();
+    this.onUrlHashChanged();
   }
 
   onScroll(evt) {
@@ -10325,7 +10324,7 @@ class FullPageScroll {
     }
   }
 
-  onUrlHashChenged() {
+  onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
@@ -10485,32 +10484,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./source/js/modules/rules-item-add-transitionend.js":
-/*!***********************************************************!*\
-  !*** ./source/js/modules/rules-item-add-transitionend.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (()=> {
-  let lastItemRules = document.querySelector(`.rules__list li:last-child p`);
-  let linkRules = document.querySelector(`.rules__link`);
-  let linkRulesText = document.querySelector(`.rules__link span`);
-
-  lastItemRules.addEventListener(`animationend`, function () {
-    linkRules.classList.add(`rules__link--bg-before`);
-    linkRulesText.classList.add(`rules__link__text--show`);
-    linkRules.style.opacity = `1`;
-    linkRules.style.transformOrigin = `100% 50%`;
-    // linkRules.style.animation = 'show-btn 0.45s ease-in-out forwards';
-  }, false);
-});
-
-
-/***/ }),
-
 /***/ "./source/js/modules/slider.js":
 /*!*************************************!*\
   !*** ./source/js/modules/slider.js ***!
@@ -10649,9 +10622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_social_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/social.js */ "./source/js/modules/social.js");
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
 /* harmony import */ var _modules_body_add_class_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/body-add-class.js */ "./source/js/modules/body-add-class.js");
-/* harmony import */ var _modules_rules_item_add_transitionend_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/rules-item-add-transitionend.js */ "./source/js/modules/rules-item-add-transitionend.js");
 // modules
-
 
 
 
@@ -10673,7 +10644,6 @@ Object(_modules_chat_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_result_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
 Object(_modules_form_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
-Object(_modules_rules_item_add_transitionend_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
 
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();
