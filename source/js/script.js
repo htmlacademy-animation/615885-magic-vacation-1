@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import bodyAddClass from './modules/body-add-class.js';
+import letterAnimation from './modules/letterAnimation.js';
 
 // init modules
 bodyAddClass();
@@ -23,3 +24,5 @@ social();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+letterAnimation();

@@ -1,23 +1,23 @@
 @keyframes show-item-text {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateX(0px);
   }
 }
 
 @keyframes show-item-before {
-  from {
+  0% {
     transform: scale(0);
     opacity: 0;
   }
   90% {
     transform: scale(1.2);
   }
-  to {
+  100% {
     transform: scale(1);
     opacity: 1;
   }
