@@ -30,11 +30,13 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  animation-name: show-block;           //Добавляем анимацию появления блока
-  animation-timing-function: ease-in;
-  animation-duration: 0.85s;
-  animation-delay: 0.55s;
-  animation-fill-mode: backwards;
+  // animation-name: show-block;           //Добавляем анимацию появления блока
+  // animation-timing-function: ease-in;
+  // animation-duration: 0.85s;
+  // animation-delay: 0.55s;
+  // animation-fill-mode: backwards;
+
+  @include animation-letter ();
 
   @media (min-width: $stop-scaling) {
     font-size: 48px;

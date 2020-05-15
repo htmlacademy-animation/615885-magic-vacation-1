@@ -31,7 +31,15 @@
   font-weight: 400;
   font-size: 12rem;
   line-height: 0.906;
-  letter-spacing: -0.04em;
+  @include animation-letter ();
+  letter-spacing: -0.05em;
+
+  .letters {
+    &:nth-child(1) {
+      margin-bottom: -45px;
+    }
+  }
+
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
@@ -49,6 +57,12 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     font-size: 5rem;
+
+    .letters {
+      &:nth-child(1) {
+        margin-bottom: 0px;
+      }
+    }
   }
 }
 
@@ -94,8 +108,8 @@
   font-size: 2.4rem;
   line-height: 1.27;
   animation-name: intro-message;
-  animation-duration: 0.65s;
-  animation-fill-mode: forwards;
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -138,12 +152,18 @@
   }
 }
 
+.body-load .intro__message {
+  animation-delay: 1.3s;
+}
+
 .intro__label {
   margin: 0 0 1.6rem;
   max-width: 25rem;
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  opacity: 0;
+  transition: opacity 0.75s ease-out;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
@@ -152,13 +172,24 @@
   }
 }
 
+.body-load .intro__label {
+  opacity: 1;
+  transition-delay: 1.3s;
+}
+
 .intro__date {
   margin: 0 0 0 -0.5rem;
   font-family: $font-alt;
   font-weight: 400;
   font-size: 4.8rem;
-  line-height: 0.906;
+  line-height: 1.2;
   letter-spacing: -0.04em;
+  letter-spacing: -0.01;
+  @include animation-letter ();
+
+  .letters {
+    margin: 0 5px;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;

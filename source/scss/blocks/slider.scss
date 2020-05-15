@@ -19,6 +19,20 @@
   padding: 14.6rem 4rem 10rem 9.7rem;
   height: auto;
 
+  &.swiper-slide-active,
+  &.swiper-slide-next {
+    p {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &.swiper-slide-next {
+    p {
+      transition-delay: 0.2s;
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     padding: 146px 40px 100px 97px;
   }
@@ -96,6 +110,9 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: transform 0.55s ease-out, opacity 0.45s ease-in;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

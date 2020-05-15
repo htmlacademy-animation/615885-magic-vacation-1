@@ -58,3 +58,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+@mixin animation-letter () {
+  line-height: 1.199;
+  letter-spacing: -0.01;
+
+  .letters {
+    display: inline-block;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      transform: translate3d(0, 1.22em, 0);
+    }
+  }
+
+  &.active .letters > span {
+    transform: translate3d(0,0,0);
+  }
+
+}
