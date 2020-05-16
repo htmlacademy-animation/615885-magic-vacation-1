@@ -172,6 +172,18 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation-delay: 0.85s;
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0,.63,.6,1.11);
+  animation-fill-mode: backwards;
+
+  &--next {
+    animation-name: toggle-right-show;
+  }
+
+  &--prev {
+    animation-name: toggle-left-show;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -250,6 +262,10 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  animation-name: show-block;
+  animation-delay: 0.85s;
+  animation-duration: 0.45s;
+  animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

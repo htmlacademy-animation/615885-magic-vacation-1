@@ -36,7 +36,7 @@
   // animation-delay: 0.55s;
   // animation-fill-mode: backwards;
 
-  @include animation-letter ();
+  @include animation-letter (1);
 
   @media (min-width: $stop-scaling) {
     font-size: 48px;
