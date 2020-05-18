@@ -60,13 +60,20 @@
 }
 
 
-@mixin animation-letter () {
+@mixin animation-letter ($word) {
   line-height: 1.199;
   letter-spacing: -0.01;
 
   .letters {
     display: inline-block;
     overflow: hidden;
+    margin: 0 5px;
+
+    @if $word == 2 {
+      &:nth-child(2) {
+        transform: translate3d(0, -85px, 0);  //Смещаем второе слово немного вверх
+      }
+    }
 
     span {
       display: inline-block;
