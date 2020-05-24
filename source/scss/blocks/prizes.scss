@@ -30,11 +30,11 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  // animation-name: show-block;           //Добавляем анимацию появления блока
-  // animation-timing-function: ease-in;
-  // animation-duration: 0.85s;
-  // animation-delay: 0.55s;
-  // animation-fill-mode: backwards;
+  animation-name: show-block;           //Добавляем анимацию появления блока
+  animation-timing-function: ease-in;
+  animation-duration: 0.85s;
+  animation-delay: 0.55s;
+  animation-fill-mode: backwards;
 
   @include animation-letter (1);
 
@@ -106,11 +106,11 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: auto;
-  animation-name: show-block;                 //Добавляем анимацию появления блока
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.85s;
-  animation-delay: 0.85s;
-  animation-fill-mode: backwards;
+  // animation-name: show-block;                 //Добавляем анимацию появления блока
+  // animation-timing-function: ease-in-out;
+  // animation-duration: 0.85s;
+  // animation-delay: 0.85s;
+  // animation-fill-mode: backwards;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     flex-direction: column;
@@ -144,6 +144,8 @@
   }
 
   &--journeys {
+    animation: show-block 0.4s backwards 0.85s, translate-journeys 5s backwards 0.85s;
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
@@ -175,6 +177,7 @@
 
   &--cases {
     margin-left: 7rem;
+    animation: show-block 0.4s backwards 6s;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -208,6 +211,8 @@
   }
 
   &--codes {
+    animation: show-block 0.4s backwards 6.5s;
+
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
