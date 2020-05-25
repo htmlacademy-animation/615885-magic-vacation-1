@@ -144,13 +144,19 @@
   }
 
   &--journeys {
-    animation: show-block 0.4s backwards 0.85s, translate-journeys 5s backwards 0.85s;
+    animation: show-block 0.4s 1 backwards 0.85s, translate-journeys 5s 1 backwards 0.85s;
 
     .prizes__icon {
       position: relative;
       left: -5.9rem;
       bottom: -1.4rem;
       width: 26.8rem;
+
+      object {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
 
       @media (min-width: $stop-scaling) {
         left: -59px;
