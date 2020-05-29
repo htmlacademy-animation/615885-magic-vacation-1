@@ -71,7 +71,7 @@
 
     @if $word == 2 {
       &:nth-child(2) {
-        transform: translate3d(0, -85px, 0);  //Смещаем второе слово немного вверх
+        transform: translate3d(0, -45px, 0);  //Смещаем второе слово немного вверх
       }
     }
 
