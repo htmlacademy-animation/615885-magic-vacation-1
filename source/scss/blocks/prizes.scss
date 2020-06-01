@@ -177,7 +177,7 @@
   }
 
   &--cases {
-    // margin-left: 7rem;
+    margin-left: 7rem;
     animation: show-block 0.4s backwards 3.5s;
 
     @media (min-width: $stop-scaling) {
@@ -191,7 +191,7 @@
 
     .prizes__icon {
       position: relative;
-      left: -120px;
+      left: -8rem;
       width: 18.8rem;
 
       @media (min-width: $stop-scaling) {
@@ -214,7 +214,7 @@
   }
 
   &--codes {
-    animation: show-block 0.4s backwards 4.5s;
+    animation: show-codes 0.4s backwards 6.3s;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
