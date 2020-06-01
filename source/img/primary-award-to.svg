@@ -110,7 +110,7 @@
         fill='freeze'
       />
     </g>
-   <!--  <path d="M17.55 224.1H241.04" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/> -->
+    <!--  <path d="M17.55 224.1H241.04" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/> -->
 
       <defs>
         <clipPath id="window" transform="translate(0 0)" clipPathUnits="userSpaceOnUse">
