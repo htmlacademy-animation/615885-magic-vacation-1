@@ -215,6 +215,18 @@
 
 .result--trip,
 .result--prize {
+  path {
+    transform: scale(1.15, 1.15);
+    transform-origin: center center;
+    animation: pathWinner 0.5s ease-out forwards 0.2s;
+  }
+
+  @keyframes pathWinner {
+    100% {
+      transform: scale(1,1);
+      stroke-dashoffset: 0;
+    }
+  }
   .result__title {
     width: 57.3rem;
     height: 11.3rem;
@@ -241,6 +253,38 @@
 }
 
 .result--negative {
+
+  path {
+    transform: translate3d(0, -120px, 0);
+    animation: pathStrokeNigativeTranslate 0.5s cubic-bezier(.98,.09,.95,.83) forwards 1s, pathStrokeNigativeStroke 0.4s linear forwards 0.2s;
+  }
+
+  @for $i from 1 through 10 {
+    path:nth-child(#{$i}) {
+      animation-delay: $i * 0.05s;
+    }
+  }
+
+  @keyframes pathStrokeNigativeTranslate {
+    70% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    80% {
+      transform: translate3d(0, -6px, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes pathStrokeNigativeStroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
   .result__title {
     margin-top: 9.5rem;
     width: 66.5rem;
