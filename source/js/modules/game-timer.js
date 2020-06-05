@@ -1,6 +1,6 @@
 export default ()=> {
-  let minutesSpan = document.querySelector('.game__minutes');
-  let secondsSpan = document.querySelector('.game__seconds');
+  let minutesSpan = document.querySelector(`.game__minutes`);
+  let secondsSpan = document.querySelector(`.game__seconds`);
 
   function wrapperForTimer(SS) {
 
@@ -19,13 +19,13 @@ export default ()=> {
         return;
       }
 
-      minutesSpan.innerHTML = minutes < 10 ? '0' + minutes: minutes;
-      secondsSpan.innerHTML = seconds < 10 ? '0' + seconds: seconds;
+      minutesSpan.innerHTML = minutes < 10 ? `0` + minutes : minutes;
+      secondsSpan.innerHTML = seconds < 10 ? `0` + seconds : seconds;
     }
 
-    requestAnimationFrame(timer)
+    requestAnimationFrame(timer);
 
   }
 
-  wrapperForTimer(300)
-}
+  wrapperForTimer(300);
+};
