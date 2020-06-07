@@ -13,6 +13,7 @@ import letterAnimation from './modules/letterAnimation.js';
 import startSvgAnimation from './modules/start-svg-animation.js';
 import svgStrokeAnimation from './modules/svg-stroke-animation.js';
 import gameTimer from './modules/game-timer.js';
+import prizesNumberAnimation from './modules/prizes-number-animation.js';
 
 // init modules
 bodyAddClass();
@@ -32,3 +33,5 @@ letterAnimation();
 startSvgAnimation();
 svgStrokeAnimation();
 gameTimer();
+prizesNumberAnimation('.prizes__number-7', 0, 7, 4300);
+prizesNumberAnimation('.prizes__number-900', 11, 900, 6800);
