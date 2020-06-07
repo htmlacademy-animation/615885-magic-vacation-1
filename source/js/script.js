@@ -12,6 +12,7 @@ import bodyAddClass from './modules/body-add-class.js';
 import letterAnimation from './modules/letterAnimation.js';
 import startSvgAnimation from './modules/start-svg-animation.js';
 import svgStrokeAnimation from './modules/svg-stroke-animation.js';
+import gameTimer from './modules/game-timer.js';
 
 // init modules
 bodyAddClass();
@@ -30,3 +31,4 @@ fullPageScroll.init();
 letterAnimation();
 startSvgAnimation();
 svgStrokeAnimation();
+gameTimer();
