@@ -33,5 +33,4 @@ letterAnimation();
 startSvgAnimation();
 svgStrokeAnimation();
 gameTimer();
-prizesNumberAnimation('.prizes__number-7', 0, 7, 4300);
-prizesNumberAnimation('.prizes__number-900', 11, 900, 6800);
+prizesNumberAnimation();
