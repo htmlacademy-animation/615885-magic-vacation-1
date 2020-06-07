@@ -1,4 +1,4 @@
-export default (selector, startNumber, endNumber, delay)=> {
+export default ()=> {
   let linkPrizes = document.querySelector(`a[href="#prizes"]`);
   let screenPrizes = document.querySelector(`.screen--prizes`);
   let fpsInterval = 1000 / 12;
@@ -25,14 +25,14 @@ export default (selector, startNumber, endNumber, delay)=> {
     setTimeout(startSumPrizes, delay);
   }
 
-  if (screenPrizes.classList.contains('active')) {
-    wrapperSumPrizes(`.prizes__number-7`, 0, 7, 4300)
-    wrapperSumPrizes(`.prizes__number-900`, 11, 900, 6800)
-  };
+  if (screenPrizes.classList.contains(`active`)) {
+    wrapperSumPrizes(`.prizes__number-7`, 0, 7, 4300);
+    wrapperSumPrizes(`.prizes__number-900`, 11, 900, 6800);
+  }
 
-  linkPrizes.addEventListener('click', function() {
-    wrapperSumPrizes(`.prizes__number-7`, 0, 7, 4300)
-    wrapperSumPrizes(`.prizes__number-900`, 11, 900, 6800)
+  linkPrizes.addEventListener(`click`, function () {
+    wrapperSumPrizes(`.prizes__number-7`, 0, 7, 4300);
+    wrapperSumPrizes(`.prizes__number-900`, 11, 900, 6800);
   });
 
 };
