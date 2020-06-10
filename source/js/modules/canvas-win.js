@@ -30,30 +30,35 @@ export default ()=> {
   });
 
   function draw(x) {
-    ctx.clearRect(0, 0, ww, wh);
-
     ctx.globalAlpha = 1;
-    rotateCtx(Math.sin(x / 10), 157, 157);
-    ctx.translate(x / 10, 0);
-    ctx.drawImage(img, 200, 200, 113, 113);
+    ctx.translate(x / 10, Math.sin(x / 13) * 2);
+    // rotateCtx(Math.sin(x / 10), 450 + x / 10 + 57, 157 + 200 + Math.sin(x / 13) * 2);
+    ctx.drawImage(img, 450, 200, 113, 113);
 
   }
 
-  function rotateCtx(angle, cx, cy) {
-    ctx.translate(cx, cy);
-    ctx.rotate((Math.PI / 180) * angle);
-    ctx.translate(-cx, -cy);
-  }
+  // function rotateCtx(angle, cx, cy) {
+  //   ctx.translate(cx, cy);
+  //   ctx.rotate((Math.PI / 180) * angle);
+  //   ctx.translate(-cx, -cy);
+  // }
 
   let x = 0;
   function tick() {
+    ctx.clearRect(0, 0, ww, wh);
+
+    ctx.fillStyle = `#5f458c`;
+    ctx.fillRect(0, 0, ww, wh);
+
     x += 0.5;
+
+    // requestAnimationFrame(tick);
     draw(x);
   }
 
   btnPositive.addEventListener(`click`, function () {
     let timer = setInterval(()=> {
-      if (x > 100) {
+      if (x > 70) {
         clearInterval(timer);
       }
       requestAnimationFrame(tick);
