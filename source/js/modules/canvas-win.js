@@ -31,17 +31,21 @@ export default ()=> {
 
   function draw(x) {
     ctx.globalAlpha = 1;
-    ctx.translate(x / 10, Math.sin(x / 13) * 2);
-    // rotateCtx(Math.sin(x / 10), 450 + x / 10 + 57, 157 + 200 + Math.sin(x / 13) * 2);
-    ctx.drawImage(img, 450, 200, 113, 113);
+    let sin = Math.sin(x / 13);
+    let cos = Math.cos(x / 13);
+    let tan = Math.tan(cos);
 
+    ctx.translate(x / 10, sin);
+    rotateCtx(tan, 450 + 57 + x / 10, 200 + 57 + sin * 3);
+
+    ctx.drawImage(img, 450, 200, 113, 113);
   }
 
-  // function rotateCtx(angle, cx, cy) {
-  //   ctx.translate(cx, cy);
-  //   ctx.rotate((Math.PI / 180) * angle);
-  //   ctx.translate(-cx, -cy);
-  // }
+  function rotateCtx(angle, cx, cy) {
+    ctx.translate(cx, cy);
+    ctx.rotate((Math.PI / 180) * angle);
+    ctx.translate(-cx, -cy);
+  }
 
   let x = 0;
   function tick() {
