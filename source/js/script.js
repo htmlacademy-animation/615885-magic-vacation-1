@@ -14,6 +14,7 @@ import startSvgAnimation from './modules/start-svg-animation.js';
 import svgStrokeAnimation from './modules/svg-stroke-animation.js';
 import gameTimer from './modules/game-timer.js';
 import prizesNumberAnimation from './modules/prizes-number-animation.js';
+import canvasWin from './modules/canvas-win.js';
 
 // init modules
 bodyAddClass();
@@ -34,3 +35,4 @@ startSvgAnimation();
 svgStrokeAnimation();
 gameTimer();
 prizesNumberAnimation();
+canvasWin();

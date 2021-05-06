@@ -344,7 +344,7 @@
           </div>
           <!-- временные кнопки для показа результата -->
           <div class="game__buttons">
-            <button class="game__button btn js-show-result" type="button" data-target="result">Положительный результат</button>
+            <button class="game__button btn js-show-result btn--positive" type="button" data-target="result">Положительный результат</button>
             <button class="game__button btn js-show-result" type="button" data-target="result2">Положительный результат - 2</button>
             <button class="game__button btn js-show-result" type="button" data-target="result3">Отрицательный результат</button>
           </div>
@@ -356,10 +356,11 @@
       <div class="screen__wrapper">
         <div class="result result--trip">
           <div class="result__image">
-            <picture>
+<!--             <picture>
               <source srcset="img/result1-mob.png 1x, img/result1-mob@2x.png 2x" media="(max-width: 768px) and (orientation: portrait)">
               <img src="img/result1.png" srcset="img/result1@2x.png 2x" alt="">
-            </picture>
+            </picture> -->
+            <canvas class="canvas-win"></canvas>
           </div>
           <h2 class="result__title">
             <span class="visually-hidden">ПОбеда!</span>
